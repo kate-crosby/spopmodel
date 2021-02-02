@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Make an age-length key with lengths as rows and ages as...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for MakeALKey {spopmodel}"><tr><td>MakeALKey {spopmodel}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Make an age-length key with lengths as rows and ages as columns.</h2>
+
+<h3>Description</h3>
+
+<p><code>MakeALKey</code> creates an age-length key according
+to length frequency per age. Resulting frequency converted to
+proportion for application to entire length dataset.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+MakeALKey(data, len, age, lenBreaks, breakLabs = NULL)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>data</code></td>
+<td>
+<p>A dataframe with length and age fields (columns).</p>
+</td></tr>
+<tr valign="top"><td><code>len</code></td>
+<td>
+<p>Field name in data containing numeric lengths.</p>
+</td></tr>
+<tr valign="top"><td><code>age</code></td>
+<td>
+<p>Field name in data containing nummeric ages.</p>
+</td></tr>
+<tr valign="top"><td><code>lenBreaks</code></td>
+<td>
+<p>How lengths are binned. See <code><a href="../../base/html/cut.html">cut</a></code>
+for more information. (Supplied to <code>breaks</code> in <code>cut</code>.)</p>
+</td></tr>
+<tr valign="top"><td><code>breakLabs</code></td>
+<td>
+<p>NULL (default), currently not used.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Age-length key (length[rows] x age[columns]) with proportion
+or 0 in each cell. Return object is of class &quot;table&quot; with
+<code>dimnames(&lt;ALK&gt;)</code> providing <code>Bin</code> and <code>Age</code> list items.
+</p>
+
+
+<h3>Note</h3>
+
+<p>In the example below, some length bins contain no aged sample.
+One can adjust the &quot;by&quot; argument in <code>seq</code> as a possible fix.
+Or one needs to age fish within those length bins.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+# check range(trammel_catch[["FL"]])
+len_breaks &lt;- seq(from = 50, to = 220, by = 5)
+MakeALKey(data = trammel_catch, len = FL, age = Age, lenBreaks = len_breaks)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>spopmodel</em> version 0.0.0.9000 <a href="00Index.html">Index</a>]</div>
+</body></html>

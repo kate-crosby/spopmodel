@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Create a frequency distribution of 'x' by 'binWidth'.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Frequency {spopmodel}"><tr><td>Frequency {spopmodel}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Create a frequency distribution of <code>x</code> by <code>binWidth</code>.</h2>
+
+<h3>Description</h3>
+
+<p><code>Frequency</code> is a custom wrapper (mostly) for
+<code><a href="../../graphics/html/hist.html">hist</a></code>. It simplifies input to only data and
+bin width. Bins are always left included but not right,
+as in <code>`[a, b)`</code>. <code>Frequency</code> removes <code>NA</code> values
+(with warning) prior to binning.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+Frequency(x, binWidth)
+
+## S3 method for class 'Frequency'
+summary(object, ...)
+
+## S3 method for class 'Frequency'
+print(x, ...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>A postive numeric vector to be binned according to <code>binWidth</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>binWidth</code></td>
+<td>
+<p>A numeric scalar (integer) defining the bin size.</p>
+</td></tr>
+<tr valign="top"><td><code>object</code></td>
+<td>
+<p>Object of class <code>Frequency</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>Passed on to other methods.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>A list (of class <code>Frequency</code> &amp; class
+<code><a href="../../graphics/html/hist.html">hist</a></code>) containing proportion &amp; count frequencies.
+</p>
+
+
+<h3>Methods (by generic)</h3>
+
+
+<ul>
+<li> <p><code>summary</code>: <code>summary</code> method (See notes).
+</p>
+</li>
+<li> <p><code>print</code>: <code>print</code> method (See notes).
+</p>
+</li></ul>
+
+
+<h3>Values</h3>
+
+
+<dl>
+<dt>others</dt><dd><p>see <code><a href="../../graphics/html/hist.html">hist</a></code></p>
+</dd></dl>
+<p>.
+</p>
+<dl>
+<dt>xna</dt><dd><p>number of NA values removed</p>
+</dd></dl>
+<p>.
+</p>
+<dl>
+<dt>xname</dt><dd><p>deparsed name of <code>x</code>, replaces <code>hist</code> <code>xname</code></p>
+</dd>
+<dt>binw</dt><dd><p>value passed to <code>binWidth</code></p>
+</dd>
+<dt>xstats</dt><dd>
+<p>function when run will yield descriptive statistics of <code>x</code>
+</p>
+</dd>
+</dl>
+
+
+
+<h3>Note</h3>
+
+<p>Method <code>summary</code> written for class Frequency. Returns
+dataframe with fields Bin, Count, Density, Proportion. Print
+method also writted for class Frequency.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+Frequency(trammel_catch[["FL"]], binWidth = 5)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>spopmodel</em> version 0.0.0.9000 <a href="00Index.html">Index</a>]</div>
+</body></html>

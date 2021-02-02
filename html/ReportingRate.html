@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Calculates angler reporting rate of non-reward tags.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for ReportingRate {spopmodel}"><tr><td>ReportingRate {spopmodel}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Calculates angler reporting rate of non-reward tags.</h2>
+
+<h3>Description</h3>
+
+<p>In mark-recapture studies, anglers are encouraged to return
+tags to the issuing entity. A mixture of non-reward tags and high-value
+reward tags typically are released to ensure returns. Not all anglers
+return tags (non-reporting), and the reporting rate adjusts
+for non-reporting.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+ReportingRate(rr, rt, nr, nt)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>rr</code></td>
+<td>
+<p>Number of non-reward tags reported (positive integer).</p>
+</td></tr>
+<tr valign="top"><td><code>rt</code></td>
+<td>
+<p>Number of non-reward tags released (positive integer).</p>
+</td></tr>
+<tr valign="top"><td><code>nr</code></td>
+<td>
+<p>Number of high-reward tags reported (positive integer).</p>
+</td></tr>
+<tr valign="top"><td><code>nt</code></td>
+<td>
+<p>Number of high-reward tags released (positive integer).</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>List containing reporting rate and reporting rate variance.
+</p>
+
+
+<h3>Note</h3>
+
+<p>In the case of CDFW sturgeon mark-recapture, all tags released
+are reward tags. We assume, then, a reporting rate of 100
+the highest value reward.
+</p>
+
+
+<h3>References</h3>
+
+<p>Kevin A. Meyer &amp; Daniel J. Schill (2014) Use of a Statewide
+Angler Tag Reporting System to Estimate Rates of Exploitation
+and Total Mortality for Idaho Sport Fisheries, North American
+Journal of Fisheries Management, 34:6, 1145-1158,
+DOI: 10.1080/02755947.2014.951803
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+# numbers for example only
+ReportingRate(rr = 5, rt = 175, nr = 10, nt = 175)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>spopmodel</em> version 0.0.0.9000 <a href="00Index.html">Index</a>]</div>
+</body></html>

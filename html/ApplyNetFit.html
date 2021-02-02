@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Apply Millar's 'NetFit' to catch data using gill net or...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for ApplyNetFit {spopmodel}"><tr><td>ApplyNetFit {spopmodel}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Apply Millar's <code>NetFit</code> to catch data using gill net or trammel net.</h2>
+
+<h3>Description</h3>
+
+<p>Apply Millar's <code>NetFit</code> to catch data using gill net or trammel net.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+ApplyNetFit(data, len, mesh, meshUnit = "in", relPower = NULL)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>data</code></td>
+<td>
+<p>A dataframe with at least length and net mesh (size) fields.</p>
+</td></tr>
+<tr valign="top"><td><code>len</code></td>
+<td>
+<p>Field name within data containing (numeric) length measurement.</p>
+</td></tr>
+<tr valign="top"><td><code>mesh</code></td>
+<td>
+<p>Field name within data containing size of net mesh. Field data
+can be character but must be &quot;coerceable&quot; to numeric.</p>
+</td></tr>
+<tr valign="top"><td><code>meshUnit</code></td>
+<td>
+<p>Scalar character containing unit of measure of net. Choices
+are &quot;in&quot; (inches), &quot;ft&quot; (feet), &quot;mm&quot; (millimeters), &quot;m&quot; (meter), and
+&quot;cm&quot; (centimeters). <code>ApplyNetFit</code> will convert to cm.</p>
+</td></tr>
+<tr valign="top"><td><code>relPower</code></td>
+<td>
+<p>The fishing power of each net size. Leave NULL (default)
+if only single mesh or all meshes are fished equally. Otherwise, supply
+numeric vector (length = number of mesh sizes) representing net
+configuration effort. For example, if net mesh sizes are 6&quot;, 7&quot;, &amp; 8&quot; and
+the 8&quot; mesh is fished at twice the effort, relPower = c(1, 1, 2) [for
+6&quot;, 7&quot;, &amp; 8&quot;].</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p><code>ApplyNetFit</code> fits 5 Millar models: <code>norm.loc</code>;
+<code>norm.sca</code>; <code>lognorm</code>; <code>binorm.sca</code>; and <code>bilognorm</code>.
+Each one of these models is a list with 12 items (explained below).
+</p>
+
+
+<h3>Value</h3>
+
+<p>A list of model fits (see details).
+</p>
+
+
+<h3>Value</h3>
+
+<p><code>ApplyNetFit</code> returns a list of class &quot;NetFit&quot; each list item
+containing the components below.
+</p>
+<p><code>par</code>         see **Value** in <code><a href="../../stats/html/optim.html">optim</a></code>
+</p>
+<p><code>value</code>       see **Value** in <code><a href="../../stats/html/optim.html">optim</a></code>
+</p>
+<p><code>counts</code>      see **Value** in <code><a href="../../stats/html/optim.html">optim</a></code>
+</p>
+<p><code>convergence</code> see **Value** in <code><a href="../../stats/html/optim.html">optim</a></code>
+</p>
+<p><code>message</code>     see **Value** in <code><a href="../../stats/html/optim.html">optim</a></code>
+</p>
+<p><code>hessian</code>     see **Value** in <code><a href="../../stats/html/optim.html">optim</a></code>
+</p>
+<p><code>Deviance</code>    model deviance (value)
+</p>
+<p><code>deviance</code>    model deviance (function); not sure of purpose
+</p>
+<p><code>rtype</code>       the name (as character) of the model
+</p>
+<p><code>rel.power</code>   values supplied to relPower, relative fishing power
+of the gear
+</p>
+<p><code>Meshsize</code>    mesh size (in centimeters)
+</p>
+<p><code>Data</code>        length frequency by mesh size (raw count data)
+</p>
+
+
+<h3>References</h3>
+
+<p>https://www.stat.auckland.ac.nz/~millar/selectware/RNext/
+</p>
+<p>https://www.stat.auckland.ac.nz/people/rmil013
+</p>
+<p>Millar and Holst (1997). Estimation of gillnet and hook
+selectivity using log-linear models
+ICES J. Mar. Sci. 54: 471-477.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+ApplyNetFit(
+  data = trammel_catch,
+  len = FL,
+  mesh = MeshSize,
+  meshUnit = "in",
+  relPower = c(1, 1, 2)
+)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>spopmodel</em> version 0.0.0.9000 <a href="00Index.html">Index</a>]</div>
+</body></html>

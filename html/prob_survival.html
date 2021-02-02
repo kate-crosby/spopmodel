@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Survival probability by age for San Francisco Estuary-based...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for prob_survival {spopmodel}"><tr><td>prob_survival {spopmodel}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Survival probability by age for San Francisco Estuary-based White Sturgeon.</h2>
+
+<h3>Description</h3>
+
+<p>A dataset for White Sturgeon (<em>Acipenser transmontanus</em>)
+with 20 ages (0-19) and corresponding survival probability
+with associated error.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 20 rows and 3 variables: </p>
+
+<dl>
+<dt>age</dt><dd><p>numeric age from 0-19</p>
+</dd>
+<dt>prob</dt><dd><p>probability of survival at each age</p>
+</dd>
+<dt>se</dt><dd><p>error associated with prob</p>
+</dd>
+</dl>
+
+
+<h3>Details</h3>
+
+<p>Survival rate estimated using <code>ChapmanRobson()</code>. Value then
+assigned for ages 3-19. Rate adjusted for exploitation (using
+<code>Exploitation()</code>) for ages within the slot limit (for this dataset
+that is ages 10-15, which represents the current slot of 40-60 inches FL).
+Exploitation for current slot ~13% given 2007-2015 CDFW
+mark-recapture data.
+</p>
+
+<ul>
+<li><p> Age 0 survival from Caroffino et al. (2010).
+</p>
+</li>
+<li><p> Age 1 survival from Pine et al. (2001).
+</p>
+</li>
+<li><p> Age 2 survival from Ireland et al. (2002).
+</p>
+</li></ul>
+
+
+
+<h3>Source</h3>
+
+<p>Model development input data (CDFW; Univ. of Idaho).
+</p>
+
+
+<h3>References</h3>
+
+<p>Caroffino D. C., T. M. Sutton, R. R. Elliott, and M. C. Donofrio.
+2010. Early life stage mortality rates of Lake Sturgeon in the
+Peshtigo River, Wisconsin.
+North American Journal of Fisheries Management 30:295-304.
+</p>
+<p>Pine, W. E., M. S. Allen, and V. J. Dreitz.  2001.
+Population viability of the Gulf of Mexico Sturgeon:
+inferences from capture-recapture and age-structuted models.
+Transactions of the American Fisheries Society 130:1164-1174.
+</p>
+<p>Ireland, S., C. R. C. Beamesderfer, V. L. Paragamian, V. D. Wakkinen,
+and J. T. Siple.  2002. Success of hatchery-reared juvenile White Sturgeon
+(Acipenser transmontanus) following release in the Kootenai River,
+Idaho USA. Journal of Applied Ichthyology 18:642-650.
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>spopmodel</em> version 0.0.0.9000 <a href="00Index.html">Index</a>]</div>
+</body></html>

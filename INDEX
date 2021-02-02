@@ -1,0 +1,49 @@
+AdjustedFreq            Get adjusted frequency based on relative
+                        retention results.
+AgeEach                 Assign age to each fish based on extant
+                        age-length data.
+ApplyNetFit             Apply Millar's 'NetFit' to catch data using
+                        gill net or trammel net.
+BackCalcLength          Uses Dahl-Lea method to back-calculate length
+                        at age.
+ChapmanRobson           Calculates survival rate given age frequency.
+DescStat                Calculates descriptive statistics of 'x'.
+DeviancePlots           Generate Millar's deviance plots for gear
+                        selectivity.
+Exploitation            Calculcates adjusted exploitation rate
+                        mu\prime.
+FitVBGM                 Fits von Bertalanffy growth model (VBGM) using
+                        'stats::nls'.
+Frequency               Create a frequency distribution of 'x' by
+                        'binWidth'.
+Lambda                  Calculate Mean Population Growth Rate.
+LoadMillarCode          Download R. Millar gear selectivity code.
+MakeALKey               Make an age-length key with lengths as rows and
+                        ages as columns.
+PopProjections          Get population projection over defined period
+                        (years).
+RelativeRetention       Get gear relative retention based on net fit
+                        model output.
+ReportingRate           Calculates angler reporting rate of non-reward
+                        tags.
+Simulations             Generate simulations for stochastic modeling of
+                        population trajectory.
+age_dist                Age frequency of San Francisco Estuary-based
+                        White Sturgeon.
+fin_ray_aging           Fin Ray Analysis of San Francisco Estuary-based
+                        White Sturgeon.
+number_eggs             Number of eggs by age for San Francisco
+                        Estuary-based White Sturgeon.
+plot.Frequency          Generate base R histogram from object of class
+                        'Frequency'.
+plot.RelativeRetention
+                        Plot relative retention values for each gear
+                        size.
+prob_spawn              Spawning probability by age for San Francisco
+                        Estuary-based White Sturgeon.
+prob_survival           Survival probability by age for San Francisco
+                        Estuary-based White Sturgeon.
+spopmodel               spopmodel: A package for modeling fish
+                        population dynamics.
+trammel_catch           Catch data of San Francisco Estuary-based White
+                        Sturgeon.

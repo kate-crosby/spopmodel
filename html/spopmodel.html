@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: spopmodel: A package for modeling fish population dynamics.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for spopmodel {spopmodel}"><tr><td>spopmodel {spopmodel}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>spopmodel: A package for modeling fish population dynamics.</h2>
+
+<h3>Description</h3>
+
+<p><code>spopmodel</code> employs a female-based Leslie Matrix to
+evaluate population dynamics (specifically population growth
+rate, <i>&lambda;</i>) over varying exploitation (<i>&mu;</i>). Model inputs
+expects age-specific probalities of spawning &amp; survival, age-specific
+fecundity, and age distribution proportional to some estimated abundance.
+<code>spopmodel</code>'s creation stems from the collaborative efforts
+of University of Idaho and CA Department of Fish &amp; Wildlife.
+</p>
+
+
+<h3>Age Distribution</h3>
+
+<p>Age frequency scaled to some absolute abundance estimate (see example
+below). Model requires young (i.e., age-0; age-1) fish, so values from
+literature (or other sources) may be necessary to complete data gaps.
+</p>
+<p>Example:
+</p>
+<p style="text-align: center;"><i>freq_{age_{i}} \times \hat{abund}</i></p>
+
+
+
+<h3>Survival Probability</h3>
+
+<p>Survival at age (as assigned in Age Distribution). Again values can be
+filled in where needed. Probability to be adjusted downward for ages
+affected by exploitation (<i>&mu;</i>). In the case of White Sturgeon for
+example, survival estimated at ~0.94, and for ages 10-15 adjusted downard
+by ~0.13. These ages vunerable to fishing mortality.
+</p>
+
+
+<h3>Spawning Probability</h3>
+
+<p>Probability based on first age of maturity. For White Sturgeon (as an
+example), this is ~age-10. Again, probability should be in-line with
+ages set in Age Distribution, and this may require setting to 0 age-0
+through age-&lt;first age maturity&gt;-1.
+</p>
+
+
+<h3>Fecundity</h3>
+
+<p>Number of eggs per age, starting with first age of maturity. If data are
+lacking, may need to consult literature for species in question.
+</p>
+
+
+<h3>Note</h3>
+
+<p>For probability datasets &amp; fecundity, some measure of error (i.e.,
+standard deviation) per value is required. These values are used in the
+simulation process.
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>spopmodel</em> version 0.0.0.9000 <a href="00Index.html">Index</a>]</div>
+</body></html>

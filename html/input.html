@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Suite of functions to generate model data inputs.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for input {spopmodel}"><tr><td>input {spopmodel}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Suite of functions to generate model data inputs.</h2>
+
+<h3>Description</h3>
+
+<p><code>spopmodel</code> requires specific inputs to operate. In the
+absence of such inputs, functions herein can generate dataframes to
+satisfy model requirements. If such data already exists, however, then
+it's best to use those data. NOTE: Functions herein default for use with
+San Francisco Estuary-based White Sturgeon. So do keep that in mind when
+employing these functions.
+</p>
+<p>Uses <code>glm</code> to predict spawning probability
+based on probability of maturity at length <em>i</em>. Spawning probability
+is then adjusted for fraction of females spawning annually.
+</p>
+<p>Uses <code>lm</code> to predict number of eggs given
+length <em>i</em>.
+</p>
+<p>Uses age frequency to provide by age (1) estimated
+abundance &amp; (2) estimated abundance of females. Uses arguments supplied
+to <code>abund</code> &amp; <code>fracFemale</code> to achieve this.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+SpawningProb(pMat = NULL, len, age, mature = 0.15)
+
+EggCount(numEggs = NULL, len, age)
+
+AgeDist(ageFreq, abund = 48000, fracFemale = 0.5)
+
+SurvivalProb(..., mu = 0.01, agesMu = 10:15, estS = 0.8132,
+  estMu = 0.1364, methodSB = TRUE)
+
+CreateSPDataframe(ages, sRate, sRateErr)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>pMat</code></td>
+<td>
+<p>A dataframe with two fields: length &amp; probability of maturity
+for each length. Default uses internal <code>SpawningProbWST</code>
+(for White Sturgeon) &amp; from Chapman 1989 (?).</p>
+</td></tr>
+<tr valign="top"><td><code>len</code></td>
+<td>
+<p>Numeric vector of lengths supplied as new data to <code>predict</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>age</code></td>
+<td>
+<p>Numeric vector of ages, where each age is appropriate for given
+length supplied in <code>len</code>. Vector must be same length as <code>len</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>mature</code></td>
+<td>
+<p>Fraction of females spawning in a given year. Default 0.15.</p>
+</td></tr>
+<tr valign="top"><td><code>numEggs</code></td>
+<td>
+<p>A dataframe with two fields: length &amp; number of eggs.
+for each length. Default uses internal <code>FecundityWST</code>
+(for White Sturgeon) &amp; from Devore 19??, using <i>0.072 * len^2.94</i>.</p>
+</td></tr>
+<tr valign="top"><td><code>ageFreq</code></td>
+<td>
+<p>A numeric vector of age frequency (like that derived from
+age-length key or direct ageing).</p>
+</td></tr>
+<tr valign="top"><td><code>abund</code></td>
+<td>
+<p>A numeric scalar given estimated overall abundance for species
+being modeled. Default 48,000 (as estimated by CDFW).</p>
+</td></tr>
+<tr valign="top"><td><code>fracFemale</code></td>
+<td>
+<p>A numerice scalar given fraction of females in population.
+Default 0.5 from Chapman et al. 1996.</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>Passed to internal function <code>CreateSPDataframe</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>mu</code></td>
+<td>
+<p>A numeric vector giving exploitation (harvest rate;
+between 0 and 1). Default 0.01.</p>
+</td></tr>
+<tr valign="top"><td><code>agesMu</code></td>
+<td>
+<p>A numeric vector of ages on which exploitation applies
+(i.e., age group subject to harvest). Default 10:15.</p>
+</td></tr>
+<tr valign="top"><td><code>estS</code></td>
+<td>
+<p>A numeric scalar given estimated survival rate of (typically)
+adult fish. Derived using <code>ChapmanRobson</code>. Default 0.8132 from
+S. Blackburn thesis work.</p>
+</td></tr>
+<tr valign="top"><td><code>estMu</code></td>
+<td>
+<p>A numeric scalar given estimated exploitation rate of
+harvestable fish. Derived using <code>Exploitation</code>. Default 0.1364 from
+S. Blackburn thesis work using 2014-2016 CDFW mark-recapture data.</p>
+</td></tr>
+<tr valign="top"><td><code>methodSB</code></td>
+<td>
+<p>Logical. Default (TRUE) denotes using S. Blackburn method to
+calculate <code>F</code> using <code>Z</code> &amp; <code>A</code> calculated from <code>estS</code>
+and not from <code>S0</code>. Change to FALSE to use <code>S0</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>ages</code></td>
+<td>
+<p>A numeric vector of ages (e.g., 0:19).</p>
+</td></tr>
+<tr valign="top"><td><code>sRate</code></td>
+<td>
+<p>A numeric vector giving survival rate (between 0 and 1).</p>
+</td></tr>
+<tr valign="top"><td><code>sRateErr</code></td>
+<td>
+<p>A numeric vector given standard error of <code>sRate</code>.</p>
+</td></tr>
+</table>
+
+
+<h3><code>SpawningProb</code></h3>
+
+<p>NA
+</p>
+
+
+<h3><code>EggCount</code></h3>
+
+<p>NA
+</p>
+
+
+<h3><code>AgeDist</code></h3>
+
+<p>NA
+</p>
+
+
+<h3><code>SurvivalProb</code></h3>
+
+<p>NA
+</p>
+
+
+<h3><code>CreateSPDataframe</code></h3>
+
+<p>NA
+</p>
+
+
+<h3>Note</h3>
+
+<p>Ideally <code>ages</code> vector supplied from age distribution data (e.g.,
+<code>age_dist</code>). Vector should contain age-0 sequentially through oldest
+age. <code>sRate</code> and <code>sRateErr</code> need not match <code>ages</code> in
+length, just not longer. If less than, the last value (e.g.,
+<code>sRate[length(sRate)]</code> is repeated to complete the dataframe.
+<code>sRate[length(sRate)]</code> must be S0, that is survival rate considering
+only natural mortality.
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>spopmodel</em> version 0.0.0.9000 <a href="00Index.html">Index</a>]</div>
+</body></html>

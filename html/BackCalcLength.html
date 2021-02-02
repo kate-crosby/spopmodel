@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Uses Dahl-Lea method to back-calculate length at age.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for BackCalcLength {spopmodel}"><tr><td>BackCalcLength {spopmodel}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Uses Dahl-Lea method to back-calculate length at age.</h2>
+
+<h3>Description</h3>
+
+<p><code>BackCalcLength</code> employs the Dahl-Lea algorithm to
+back-calculate length at age given specific data from the analysis
+of hard parts (e.g., scales). Assumes for now first age is 1.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+BackCalcLength(data, lCap, rCap, rAtAge)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>data</code></td>
+<td>
+<p>Dataframe where each row is a single fish &amp; contains
+fields below.</p>
+</td></tr>
+<tr valign="top"><td><code>lCap</code></td>
+<td>
+<p>Field name in data containing (numeric) length at capture.</p>
+</td></tr>
+<tr valign="top"><td><code>rCap</code></td>
+<td>
+<p>Field name in data containing (numeric) scale radius at capture.</p>
+</td></tr>
+<tr valign="top"><td><code>rAtAge</code></td>
+<td>
+<p>Field (column) names or column numbers (easier) in <code>data</code>
+containing scale radius at each age <em>i</em>.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>A dataframe with two numeric fields: <code>len</code> &amp; <code>age</code>. NA
+values have been removed.
+</p>
+
+
+<h3>References</h3>
+
+<p>Lea, E. 1910. On the methods used in the herring-investigations.
+Publ. Circonst. Cons. perm. int. Explor. Mer 108(1):14–22.
+</p>
+<p>Ogle, D.H. 2016. Introductory Fisheries Analyses with R. Chapman
+&amp; Hall/CRC, Boca Raton, FL.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+# code here
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>spopmodel</em> version 0.0.0.9000 <a href="00Index.html">Index</a>]</div>
+</body></html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Assign age to each fish based on extant age-length data.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for AgeEach {spopmodel}"><tr><td>AgeEach {spopmodel}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Assign age to each fish based on extant age-length data.</h2>
+
+<h3>Description</h3>
+
+<p><code>AgeEach</code> inspired by <code>FSA::alkIndivAge</code>. Here
+<code>AgeEach</code> output is more tailored for use within this package.
+<code>AgeEach</code> handles age assignment at the length bin level, so
+instance of an age-length key is not required.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+AgeEach(data, len, age, lenBreaks, sex = NULL)
+
+## S3 method for class 'AgeEach'
+print(x, ...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>data</code></td>
+<td>
+<p>A dataframe with length and age fields (columns).</p>
+</td></tr>
+<tr valign="top"><td><code>len</code></td>
+<td>
+<p>Field name in data containing numeric lengths.</p>
+</td></tr>
+<tr valign="top"><td><code>age</code></td>
+<td>
+<p>Field name in data containing nummeric ages.</p>
+</td></tr>
+<tr valign="top"><td><code>lenBreaks</code></td>
+<td>
+<p>lenBreaks How lengths are binned. See <code><a href="../../base/html/cut.html">cut</a></code>
+for more information. (Supplied to <code>breaks</code> in <code>cut</code>.)</p>
+</td></tr>
+<tr valign="top"><td><code>sex</code></td>
+<td>
+<p>(default NULL) Currently not used.</p>
+</td></tr>
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>Object of class <code>AgeEach</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>Currently not used.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>A list with age &amp; bin diagnostics along with
+a numeric vector of ages, with length = <code>nrow(data)</code>.
+</p>
+
+
+<h3>Methods (by generic)</h3>
+
+
+<ul>
+<li> <p><code>print</code>: <code>print</code> method (See notes).
+</p>
+</li></ul>
+
+
+<h3>Note</h3>
+
+<p>Print method for convenience of output.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+# check range(trammel_catch[["FL"]])
+len_breaks &lt;- seq(from = 50, to = 220, by = 5)
+AgeEach(data = trammel_catch, len = FL, age = Age, lenBreaks = len_breaks)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>spopmodel</em> version 0.0.0.9000 <a href="00Index.html">Index</a>]</div>
+</body></html>

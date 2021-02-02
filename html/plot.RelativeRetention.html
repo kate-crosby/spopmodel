@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Plot relative retention values for each gear size.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for plot.RelativeRetention {spopmodel}"><tr><td>plot.RelativeRetention {spopmodel}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Plot relative retention values for each gear size.</h2>
+
+<h3>Description</h3>
+
+<p>This is an S3 method for <code>plot</code> of class
+<code>RelativeRetention</code>. It allows the user to visually
+display relative retentions of each gear size and to
+view on each plot model deviance (for ease of deciding best fit).
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+## S3 method for class 'RelativeRetention'
+plot(x, ...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>Object of class <code>RelativeRetention</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>Passed on to other methods.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Nothing. But does display (base R) line plot of relative renetions
+as a function of measured length (e.g., fork length). Plot title
+contains model name, model deviance, and true or false for
+&quot;is standardized?&quot;. See default method
+<code><a href="RelativeRetention.html">RelativeRetention</a></code>.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+net_fit &lt;- ApplyNetFit(
+  data = trammel_catch,
+  len = FL,
+  mesh = MeshSize,
+  meshUnit = "in",
+  relPower = c(1,1,2)
+)
+rr &lt;- RelativeRetention(net_fit)
+plot(rr$norm.loc)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>spopmodel</em> version 0.0.0.9000 <a href="00Index.html">Index</a>]</div>
+</body></html>

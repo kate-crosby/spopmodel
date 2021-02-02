@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Internal functions for 'spopmodel'.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for CheckAge {spopmodel}"><tr><td>CheckAge {spopmodel}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Internal functions for <code>spopmodel</code>.</h2>
+
+<h3>Description</h3>
+
+<p>Functions herein are used internally by <code>spopmodel</code>.
+Direct function calls are not required by general user.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+CheckAge(age)
+
+BinWidth(w)
+
+StartVals(len, mesh, FUN = NULL)
+
+GetX0(svals)
+
+## S3 method for class 'RelativeRetention'
+print(x, ...)
+
+GetVBGM(Linf, K, t0)
+
+selncurves(rtype)
+
+NetFit(Data, Meshsize, x0, rtype = "norm.loc", rel.power = NULL)
+
+nllhood(theta, Data, Meshsize, r, rel.power)
+
+Estimates(fit)
+
+PlotCurves(fit, Meshsize = NULL, plotlens = NULL, standardize = TRUE,
+  ...)
+
+Summary(fit, label = "Deviance residuals", xlabel = "Length (cm)",
+  ylabel = "Mesh size (cm)", cex = 1)
+
+LeslieMatrix(sims, survSims, mn, sdev)
+
+MeanLogLambda(popChanges)
+
+bval(mn, sdev, fx = runif(1))
+
+sbval(mn, std, minb, maxb, fx)
+
+pp(A, n, iterations = 20)
+
+BetavalSims(mn, sdev, iterations = 10)
+
+SBetavalSims(mn, sdev, minb = 0, maxb = NULL, iterations = 10)
+
+SampleSims(sims, n, span = 5, seed = NULL)
+
+FishingParams(S, mu)
+
+ToCM(x, unit = c("in", "ft", "mm", "m", "cm"))
+
+CreateLenBins(len, lenBreaks, breakLabs = NULL, numericBin = FALSE,
+  ...)
+
+CheckBin(x)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>spopmodel</em> version 0.0.0.9000 <a href="00Index.html">Index</a>]</div>
+</body></html>

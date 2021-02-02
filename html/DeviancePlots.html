@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Generate Millar's deviance plots for gear selectivity.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for DeviancePlots {spopmodel}"><tr><td>DeviancePlots {spopmodel}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Generate Millar's deviance plots for gear selectivity.</h2>
+
+<h3>Description</h3>
+
+<p>We choose a selectivity model based on deviance. The lower the
+deviance, the better the fit. Deviance plots display residuals (by mesh
+size) in a &quot;bubble-plot&quot; format. (describe 'bubbles' and size here) Plot is
+a side effect of Millar's <code>Summary</code> function. Function returns a
+list, with number of items equal to the number of models (i.e., 5). See
+Values for output.
+</p>
+<p>Default S3 method.
+</p>
+<p>S3 method for class NetFit.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+DeviancePlots(x, ...)
+
+## Default S3 method:
+DeviancePlots(x, ...)
+
+## S3 method for class 'NetFit'
+DeviancePlots(x, ...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>Generic parameter for S3 method. Likely a model fit
+of class &quot;NetFit&quot;.</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>Passed to other methods.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>If <code>x</code> is a list, output is a list with same number of
+elements, each element is a matrix. Otherwise output is a matrix with one
+column. See Values.
+</p>
+
+
+<h3>Values</h3>
+
+
+<dl>
+<dt>null.l</dt><dd><p>doc needed here</p>
+</dd>
+<dt>model.l</dt><dd><p>doc needed here</p>
+</dd>
+<dt>full.l</dt><dd><p>doc needed here</p>
+</dd>
+<dt>Deviance</dt><dd><p>model deviance</p>
+</dd>
+<dt>Pearson.chisq</dt><dd><p>doc needed here</p>
+</dd>
+<dt>d.o.f</dt><dd><p>degrees of freedom</p>
+</dd>
+</dl>
+
+
+
+<h3>Note</h3>
+
+<p><code>DeviancePlots</code> is essentially a convenient wrapper for Millar's
+<code>Summary</code> function.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+# for method .NetFit
+net_fit &lt;- ApplyNetFit(
+  data = trammel_catch,
+  len = FL,
+  mesh = MeshSize,
+  meshUnit = "in",
+  relPower = c(1,1,2)
+)
+DeviancePlots(net_fit)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>spopmodel</em> version 0.0.0.9000 <a href="00Index.html">Index</a>]</div>
+</body></html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Get gear relative retention based on net fit model output.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for RelativeRetention {spopmodel}"><tr><td>RelativeRetention {spopmodel}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Get gear relative retention based on net fit model output.</h2>
+
+<h3>Description</h3>
+
+<p><code>RelativeRetention</code> is a re-write of Millar's
+<code>PlotCurves</code> for convenient use within this package. It
+generates (among other items) a dataframe relative retention values
+for each gear type (columns) by each length (or length bin; rows).
+Out put can then be used to 'adjust' catch accordingly.
+</p>
+<p>Default S3 method.
+</p>
+<p>S3 method for class <code>NetFit</code>.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+RelativeRetention(x, ...)
+
+## Default S3 method:
+RelativeRetention(x, ..., standardize = TRUE)
+
+## S3 method for class 'NetFit'
+RelativeRetention(x, ...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>Generic for S3 methods. Model output from <code>NetFit</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>Passed to other methods.</p>
+</td></tr>
+<tr valign="top"><td><code>standardize</code></td>
+<td>
+<p>Boolean. If <code>TRUE</code> (default), relative
+retention values are divided by <code>max(relative retention)</code>.
+If <code>FALSE</code>, not such division occurs.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>List of objects. See Values.
+</p>
+
+
+<h3>Values</h3>
+
+
+<dl>
+<dt>Data</dt><dd><p>dataframe of relative retention values</p>
+</dd>
+<dt>Freq</dt><dd><p>raw frequency data (i.e., recorded catch)</p>
+</dd>
+<dt>RelPower</dt><dd><p>relative power of gear type</p>
+</dd>
+<dt>MeshSize</dt><dd><p>mesh size of each gear</p>
+</dd>
+<dt>Deviance</dt><dd><p>measure of 'fit' for each model</p>
+</dd>
+<dt>ColNames</dt><dd><p>column names of <code>Data</code></p>
+</dd>
+<dt>Model</dt><dd><p>name of net fit model</p>
+</dd>
+<dt>Standardized</dt><dd><p>true or false, is relative retention standardized</p>
+</dd>
+</dl>
+
+
+
+<h3>Examples</h3>
+
+<pre>
+# for .NetFit method
+net_fit &lt;- ApplyNetFit(
+  data = trammel_catch,
+  len = FL,
+  mesh = MeshSize,
+  meshUnit = "in",
+  relPower = c(1,1,2)
+)
+RelativeRetention(net_fit)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>spopmodel</em> version 0.0.0.9000 <a href="00Index.html">Index</a>]</div>
+</body></html>

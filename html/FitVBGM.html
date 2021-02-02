@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Fits von Bertalanffy growth model (VBGM) using 'stats::nls'.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for FitVBGM {spopmodel}"><tr><td>FitVBGM {spopmodel}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Fits von Bertalanffy growth model (VBGM) using <code>stats::nls</code>.</h2>
+
+<h3>Description</h3>
+
+<p><code>FitVBGM</code> using Ricker 1975, eqn. 9.9 to calculate
+length at age.<i>l_t = L_{inf}(1 - e^{-K(t-t_0)})</i>
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+FitVBGM(data, len, age, start = list(), ...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>data</code></td>
+<td>
+<p>Dataframe with length and age fields.</p>
+</td></tr>
+<tr valign="top"><td><code>len</code></td>
+<td>
+<p>Numeric length field within data.</p>
+</td></tr>
+<tr valign="top"><td><code>age</code></td>
+<td>
+<p>Numeric age field within data.</p>
+</td></tr>
+<tr valign="top"><td><code>start</code></td>
+<td>
+<p>Starting parameters passed to <code>stats::nls</code>. Must be
+a named list with values for &quot;Linf&quot;, &quot;K&quot;, and &quot;t0&quot;.</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>Further arguments passed to <code><a href="../../stats/html/nls.html">nls</a></code>.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Model fit object of type <code><a href="../../stats/html/nls.html">nls</a></code>.
+</p>
+
+
+<h3>References</h3>
+
+<p>Ricker, W.E. (1975). Computation and Interpretation of
+Biological Statistics of Fish Populations. Bulletin of the Fisheries
+Research Board of Canada, Bulletin 191, Ottawa.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+# start_vals from Cal Fish and Game, Kohlhorst et al 1980
+start_vals &lt;- list(Linf = 261.2, K = 0.04027, t0 = 3.638)
+catch_data &lt;- subset(trammel_catch, !is.na(Age))
+# below example giving error...need to troubleshoot
+## Not run: 
+FitVBGM(
+  data = subset(trammel_catch, !is.na(Age)),
+  len = FL,
+  age = Age,
+  start = start_vals
+)
+
+## End(Not run)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>spopmodel</em> version 0.0.0.9000 <a href="00Index.html">Index</a>]</div>
+</body></html>

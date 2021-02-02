@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Generate simulations for stochastic modeling of population...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Simulations {spopmodel}"><tr><td>Simulations {spopmodel}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Generate simulations for stochastic modeling of population trajectory.</h2>
+
+<h3>Description</h3>
+
+<p>Simulate environmental stochasticity for surivial, spawning, and
+number of eggs using age-specific empirical data. Simulated data are used
+by <code>PopProjections</code> to calculate population trajections (lambda).
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+Simulations(data, prob, std, recruitment = 5, minb = 0, maxb = NULL,
+  iters = 10, seed = NULL, type = c("survival", "spawning",
+  "numeggs"))
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>data</code></td>
+<td>
+<p>Dataframe containing age-specific probabilities for survival,
+spawning, or number of eggs along with standard deviations (errors)</p>
+</td></tr>
+<tr valign="top"><td><code>prob</code></td>
+<td>
+<p>Column name in data containing age-specific probabilities or
+count.</p>
+</td></tr>
+<tr valign="top"><td><code>std</code></td>
+<td>
+<p>Column name in data containing error of probabilities.</p>
+</td></tr>
+<tr valign="top"><td><code>recruitment</code></td>
+<td>
+<p>Used only for &quot;survival&quot; option. Value (default = 5)
+denotes period of successful recruitment.</p>
+</td></tr>
+<tr valign="top"><td><code>minb</code></td>
+<td>
+<p>Used only for &quot;numeggs&quot; option. Value passed on to
+<code><a href="../../popbio/html/stretchbetaval.html">stretchbetaval</a></code>; default = 0.</p>
+</td></tr>
+<tr valign="top"><td><code>maxb</code></td>
+<td>
+<p>Used only for &quot;numeggs&quot; option. Value passed on to
+<code><a href="../../popbio/html/stretchbetaval.html">stretchbetaval</a></code>; default = NULL; if NULL value will be 3 times
+data[[prob]]</p>
+</td></tr>
+<tr valign="top"><td><code>iters</code></td>
+<td>
+<p>Scalar integer. Number of iterations to perform. Default 10;
+function will slow with higher (i.e., &gt; 5000) value.</p>
+</td></tr>
+<tr valign="top"><td><code>seed</code></td>
+<td>
+<p>Numeric value passed to <code>set.seed</code> to ensure repeatability.</p>
+</td></tr>
+<tr valign="top"><td><code>type</code></td>
+<td>
+<p>Scalar character as one of three options: &quot;survival&quot;; &quot;spawning&quot;;
+or &quot;numeggs&quot;. Choose one based on desired simulation. Default = &quot;survival&quot;.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>A matrix of model simulations (varies depending on argument
+supplied to <code>type</code>). Matrix is of class <code>simulations</code>.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+# code here
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>spopmodel</em> version 0.0.0.9000 <a href="00Index.html">Index</a>]</div>
+</body></html>

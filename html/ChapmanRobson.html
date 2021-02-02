@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Calculates survival rate given age frequency.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for ChapmanRobson {spopmodel}"><tr><td>ChapmanRobson {spopmodel}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Calculates survival rate given age frequency.</h2>
+
+<h3>Description</h3>
+
+<p><code>ChapmanRobson</code> adapted from Ricker 1975, eqn. 2.5 (2.6 for variance).
+Method is similar to using catch curve with age frequency.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+ChapmanRobson(ages, n, N0 = 2)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>ages</code></td>
+<td>
+<p>Numeric vector of ages.</p>
+</td></tr>
+<tr valign="top"><td><code>n</code></td>
+<td>
+<p>Numeric vector (length of ages) containing count (n) at each age.</p>
+</td></tr>
+<tr valign="top"><td><code>N0</code></td>
+<td>
+<p>Single value denoting starting age.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Survival rate estimate <i>\hat{S}</i> with variance
+Var(<i>\hat{S}</i>). Also returns sumages used * count and
+sumfrequency of all ages used
+</p>
+
+
+<h3>References</h3>
+
+<p>Ricker, W.E. (1975). Computation and Interpretation of
+Biological Statistics of Fish Populations. Bulletin of the Fisheries
+Research Board of Canada, Bulletin 191, Ottawa.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+# ChapmanRobson(ages = , n = , N0 = 3)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>spopmodel</em> version 0.0.0.9000 <a href="00Index.html">Index</a>]</div>
+</body></html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Spawning probability by age for San Francisco Estuary-based...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for prob_spawn {spopmodel}"><tr><td>prob_spawn {spopmodel}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Spawning probability by age for San Francisco Estuary-based White Sturgeon.</h2>
+
+<h3>Description</h3>
+
+<p>A dataset for White Sturgeon (<em>Acipenser transmontanus</em>)
+with 20 ages (0-19) and corresponding spawning probability
+with associated error.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 20 rows and 3 variables: </p>
+
+<dl>
+<dt>age</dt><dd><p>numeric age from 0-19</p>
+</dd>
+<dt>prob</dt><dd><p>probability of spawning at each age</p>
+</dd>
+<dt>se</dt><dd><p>error associated with prob</p>
+</dd>
+</dl>
+
+
+<h3>Details</h3>
+
+<p>Based on generalized linear model using data from Chapman 1989.
+Model used <code>binomial(link = "logit")</code> with probability of
+maturity ~ length.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Model development input data (CDFW; Univ. of Idaho).
+</p>
+
+
+<h3>References</h3>
+
+<p>Chapman, F.  1989.  Sexual maturation and reproductive parameters
+of wild and domestic stocks of White Sturgeon, Acipenser transmontanus.
+Doctoral dissertation. University of California, Davis, California.
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>spopmodel</em> version 0.0.0.9000 <a href="00Index.html">Index</a>]</div>
+</body></html>

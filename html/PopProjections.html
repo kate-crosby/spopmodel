@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Get population projection over defined period (years).</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for PopProjections {spopmodel}"><tr><td>PopProjections {spopmodel}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Get population projection over defined period (years).</h2>
+
+<h3>Description</h3>
+
+<p><code>PopProjections</code> is essentially a wrapper for
+<code><a href="../../popbio/html/pop.projection.html">pop.projection</a></code>. It will run <code>pop.projection</code> for every
+simulation (i.e., column) in the simulation matrices (passed to
+<code>fSims</code> &amp; <code>sSims</code>). Function creates the Leslie Matrix (*A*)
+required by <code>pop.projection</code>.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+PopProjections(fSims, sSims, mn, sdev, ageFreq, period)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>fSims</code></td>
+<td>
+<p>A matrix of fecundity simulations, likely the product of
+simulated number of eggs x simulated spawning probabilities x sex
+ratio (expressed as a proportion, e.g., 0.5).</p>
+</td></tr>
+<tr valign="top"><td><code>sSims</code></td>
+<td>
+<p>A matrix of survival simulations, likely one matrix for each
+level of exploitation (mu) being tested.</p>
+</td></tr>
+<tr valign="top"><td><code>mn</code></td>
+<td>
+<p>Scalar numeric value as survival probability of oldest fish (i.e.,
+max age in <code>ageFreq</code>)</p>
+</td></tr>
+<tr valign="top"><td><code>sdev</code></td>
+<td>
+<p>Scalar numeric value as corresponding error for <code>mn</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>ageFreq</code></td>
+<td>
+<p>Numeric vector of age frequency passed on to <code>n</code> in
+<code><a href="../../popbio/html/pop.projection.html">pop.projection</a></code>.</p>
+</td></tr>
+<tr valign="top"><td><code>period</code></td>
+<td>
+<p>Scalar integer given number of years to project. Passed on to
+<code>iterations</code> in <code><a href="../../popbio/html/pop.projection.html">pop.projection</a></code>.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>A large matrix with rows as 'Value' output in
+<code>link{pop.projection}</code> and number of columns = number of simulations.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+# code here
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>spopmodel</em> version 0.0.0.9000 <a href="00Index.html">Index</a>]</div>
+</body></html>
